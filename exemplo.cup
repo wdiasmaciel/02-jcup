@@ -6,9 +6,6 @@ terminal MAIS, MENOS, PTVIRG;
 non terminal inicio;
 non terminal Integer expr;
 
-precedence left MAIS;
-precedence left MENOS;
-
 start with inicio;
 
 inicio ::= expr:e PTVIRG {: System.out.println(e); :}
