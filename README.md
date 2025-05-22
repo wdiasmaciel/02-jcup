@@ -47,18 +47,15 @@ terminal MAIS, MENOS, PTVIRG;
 non terminal inicio;
 non terminal Integer expr;
 
-precedence left MAIS, MENOS;
-
 start with inicio;
 
 inicio ::= expr:e PTVIRG {: System.out.println(e); :}
          ;
 
-expr ::= INTEIRO:a MAIS expr:b  {: RESULT = a.intValue() + b.intValue(); :}
-       | INTEIRO:a MENOS expr:b {: RESULT = a.intValue() - b.intValue(); :}
-       | INTEIRO:a {: RESULT = a.intValue(); :}
-       ;
-```
+expr ::= expr:a MAIS INTEIRO:b  {: RESULT = a.intValue() + b.intValue(); :}
+       | expr:a MENOS INTEIRO:b {: RESULT = a.intValue() - b.intValue(); :}
+       | INTEIRO:a              {: RESULT = a.intValue(); :}
+       ;```
 
 7. Criar o arquivo `Main.java`:
 - `touch Main.java`
