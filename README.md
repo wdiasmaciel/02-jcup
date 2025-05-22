@@ -55,7 +55,8 @@ inicio ::= expr:e PTVIRG {: System.out.println(e); :}
 expr ::= expr:a MAIS INTEIRO:b  {: RESULT = a.intValue() + b.intValue(); :}
        | expr:a MENOS INTEIRO:b {: RESULT = a.intValue() - b.intValue(); :}
        | INTEIRO:a              {: RESULT = a.intValue(); :}
-       ;```
+       ;
+```
 
 7. Criar o arquivo `Main.java`:
 - `touch Main.java`
